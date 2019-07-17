@@ -3,6 +3,7 @@ import { createElement } from 'react';
 export default function Foo(props) {
   return [
     <View x-class={[]}></View>,
+    <View x-class="string" ></View>,
     <View x-class={[]} className="page-home"></View>,
     <View x-class={[]} className={"hello"}></View>,
     <View x-class={[]} className={id}></View>,
