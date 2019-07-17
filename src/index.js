@@ -7,7 +7,7 @@ export default function({ types: t }) {
   return {
     visitor: {
       Program(path) {
-        path.__helperImported = false;
+        path.__classHelperImported = false;
       },
       JSXAttribute(path) {
         const { node, parentPath } = path;
@@ -43,14 +43,14 @@ export default function({ types: t }) {
           path.remove();
 
           const rootPath = path.findParent(p => p.isProgram());
-          if (rootPath.__helperImported === false) {
+          if (rootPath.__classHelperImported === false) {
             const imported = t.identifier(helperImportedName);
             const local = t.identifier(helperLocalName);
             const importDeclaration = t.importDeclaration([
               t.importSpecifier(local, imported)
             ], t.stringLiteral(helperImportedFrom))
             rootPath.unshiftContainer('body', importDeclaration);
-            rootPath.__helperImported = true;
+            rootPath.__classHelperImported = true;
           }
         }
       },
