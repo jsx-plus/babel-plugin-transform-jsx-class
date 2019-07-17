@@ -23,7 +23,17 @@ export default function Foo(props) {
 **Out**
 
 ```jsx
+import { createElement } from 'react';
 
+export default function Foo(props) {
+  const { message } = props;
+  return (
+    <div className={classnames(['foo', {
+	    bar: true,
+	    active: false,
+	  }])}>hello world</div>
+  );
+}
 ```
 
 ## Installation
