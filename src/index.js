@@ -35,7 +35,7 @@ export default function({ types: t }) {
             );
           } else {
             attributes.push(t.jsxAttribute(
-              t.jsxIdentifier('classNames'),
+              t.jsxIdentifier('className'),
               t.jsxExpressionContainer(callExp)
             ));
           }
