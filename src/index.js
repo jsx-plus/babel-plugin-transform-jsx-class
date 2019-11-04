@@ -34,7 +34,7 @@ export default function({ types: t }) {
               else prevVal = t.stringLiteral('');
 
               classNameAttribute.value = t.jsxExpressionContainer(
-                t.binaryExpression('+', prevVal , callExp)
+                t.binaryExpression('+', t.binaryExpression('+', prevVal , t.stringLiteral(' ')) , callExp)
               );
             } else {
               attributes.push(t.jsxAttribute(
