@@ -50,20 +50,20 @@ $ npm install babel-plugin-transform-jsx-class
 
 ```json
 {
-  "plugins": ["transform-jsx-memo"]
+  "plugins": ["transform-jsx-class"]
 }
 ```
 
 ### Via CLI
 
 ```sh
-$ babel --plugins transform-jsx-memo script.js
+$ babel --plugins transform-jsx-class script.js
 ```
 
 ### Via Node API
 
 ```javascript
 require("babel-core").transform("code", {
-  plugins: ["transform-jsx-memo"]
+  plugins: ["transform-jsx-class"]
 });
 ```
