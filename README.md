@@ -54,6 +54,18 @@ $ npm install babel-plugin-transform-jsx-class
 }
 ```
 
+Use custom directive
+
+```json
+{
+  "plugins": [
+    ["transform-jsx-class", {
+      "directive": "classList" // default: x-class
+    }]
+  ]
+}
+```
+
 ### Via CLI
 
 ```sh

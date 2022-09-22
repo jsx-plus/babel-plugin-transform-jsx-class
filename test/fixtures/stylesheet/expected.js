@@ -44,7 +44,11 @@ function _getStyle(classNameExpression) {
       style = _styleSheet[classNameArr[0].trim()];
     } else {
       classNameArr.forEach(function (cls) {
-        style = Object.assign(style, _styleSheet[cls.trim()]);
+        var value = _styleSheet[cls.trim()];
+
+        if (typeof value === 'object') {
+          style = Object.assign(style, _styleSheet[cls.trim()]);
+        }
       });
     }
 
