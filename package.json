@@ -4,6 +4,7 @@
   "description": "Support classnames with directive.",
   "author": "jsx-plus <i@zeroling.com>",
   "main": "lib/index.js",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
