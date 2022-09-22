@@ -16,7 +16,9 @@ describe('', () => {
       const fixtureDir = path.join(fixturesDir, caseName);
       const actualPath = path.join(fixtureDir, 'actual.js');
       const actual = transformFileSync(actualPath, {
-        plugins: [[plugin, {}], caseName === 'stylesheet' ? stylesheet : null].filter(p => !!p),
+        plugins: [[plugin, {
+          directive: caseName === 'directive' ? 'classList' : undefined
+        }], caseName === 'stylesheet' ? stylesheet : null].filter(p => !!p),
         parserOpts: {
           plugins: ['jsx']
         },

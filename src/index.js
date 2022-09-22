@@ -9,13 +9,14 @@ export default function({ types: t }) {
       Program(path) {
         path.__classHelperImported = false;
       },
-      JSXOpeningElement(parentPath) {
+      JSXOpeningElement(parentPath, state) {
         const attributePaths = parentPath.get('attributes') || [];
         const attributes = parentPath.node.attributes || [];
+        const directive = state.opts.directive || DIRECTIVE;
 
         attributePaths.some(function(path) {
           const { node } = path;
-          if (t.isJSXIdentifier(node.name, { name: DIRECTIVE })) {
+          if (t.isJSXIdentifier(node.name, { name: directive })) {
             const params = [];
             if (t.isJSXExpressionContainer(node.value)) params.push(node.value.expression);
             else if (t.isStringLiteral(node.value)) params.push(node.value);
